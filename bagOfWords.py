@@ -30,16 +30,14 @@ def loadSentiment():
 
 def calculateBOWSentiment(text):
     global HITS
-    text = text.encode('utf-8')
+    text = text
     pos = 0
     neg = 0
     for x in POSWORDS:
         hitCount = text.count(x + ' ')
-        if hitCount != 0: print x
         pos += hitCount
     for x in NEGWORDS:
         hitCount = text.count(x + ' ')
-        if hitCount != 0: print x
         neg += hitCount
     return pos - neg
 
